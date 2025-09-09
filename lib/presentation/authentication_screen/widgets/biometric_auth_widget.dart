@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
-import '../../../theme/app_theme.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 class BiometricAuthWidget extends StatefulWidget {
   final VoidCallback onBiometricSuccess;
@@ -80,12 +78,12 @@ class _BiometricAuthWidgetState extends State<BiometricAuthWidget>
       await Future.delayed(const Duration(seconds: 1));
 
       if (mounted) {
-        HapticFeedback.notificationImpact(NotificationFeedbackType.success);
+        HapticFeedback.selectionClick();
         widget.onBiometricSuccess();
       }
     } catch (e) {
       if (mounted) {
-        HapticFeedback.notificationImpact(NotificationFeedbackType.error);
+        HapticFeedback.heavyImpact();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(

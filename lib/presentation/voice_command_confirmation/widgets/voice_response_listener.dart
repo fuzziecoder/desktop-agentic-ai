@@ -113,8 +113,8 @@ class _VoiceResponseListenerState extends State<VoiceResponseListener>
                   'Say "Yes", "Confirm", "Cancel", or "No"',
                   style: AppTheme.lightTheme.textTheme.bodyMedium?.copyWith(
                     color: AppTheme.lightTheme.colorScheme.onSurfaceVariant,
-                    textAlign: TextAlign.center,
                   ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),

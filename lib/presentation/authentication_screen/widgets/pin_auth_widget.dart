@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/app_export.dart';
-import '../../../theme/app_theme.dart';
-import '../../../widgets/custom_icon_widget.dart';
 
 class PinAuthWidget extends StatefulWidget {
   final VoidCallback onPinSuccess;
@@ -60,13 +58,13 @@ class _PinAuthWidgetState extends State<PinAuthWidget> {
 
   Future<void> _validatePin() async {
     if (_enteredPin == _correctPin) {
-      HapticFeedback.notificationImpact(NotificationFeedbackType.success);
+      HapticFeedback.heavyImpact();
       setState(() {
         _failedAttempts = 0;
       });
       widget.onPinSuccess();
     } else {
-      HapticFeedback.notificationImpact(NotificationFeedbackType.error);
+      HapticFeedback.heavyImpact();
       setState(() {
         _failedAttempts++;
         _enteredPin = '';
